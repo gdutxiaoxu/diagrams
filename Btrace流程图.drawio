@@ -1,0 +1,60 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.3">
+  <diagram name="第 1 页" id="CdjdzfQs8GjqYOgXnn1t">
+    <mxGraphModel dx="1426" dy="751" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-3" edge="1" parent="1" source="GlSWEHvv7VW7eEnH_F78-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="GlSWEHvv7VW7eEnH_F78-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="安装 apk 运行脚本" vertex="1">
+          <mxGeometry height="60" width="120" x="260" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-5" edge="1" parent="1" source="GlSWEHvv7VW7eEnH_F78-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="GlSWEHvv7VW7eEnH_F78-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-14" edge="1" parent="1" source="GlSWEHvv7VW7eEnH_F78-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.342;entryY=-0.067;entryDx=0;entryDy=0;entryPerimeter=0;" target="GlSWEHvv7VW7eEnH_F78-6" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-2" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="拉起指定页面，抓取生成 pb" vertex="1">
+          <mxGeometry height="60" width="120" x="260" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-10" edge="1" parent="1" source="GlSWEHvv7VW7eEnH_F78-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="GlSWEHvv7VW7eEnH_F78-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-4" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="分析主要耗时方法" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-15" edge="1" parent="1" source="GlSWEHvv7VW7eEnH_F78-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="GlSWEHvv7VW7eEnH_F78-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-6" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="分析预定义方法堆栈" vertex="1">
+          <mxGeometry height="60" width="120" x="150" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-17" edge="1" parent="1" source="GlSWEHvv7VW7eEnH_F78-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="GlSWEHvv7VW7eEnH_F78-16" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-9" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="存入数据库" vertex="1">
+          <mxGeometry height="60" width="120" x="250" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-19" edge="1" parent="1" source="GlSWEHvv7VW7eEnH_F78-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="GlSWEHvv7VW7eEnH_F78-18" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-16" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="对比新旧版本数据" vertex="1">
+          <mxGeometry height="60" width="120" x="250" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-21" edge="1" parent="1" source="GlSWEHvv7VW7eEnH_F78-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="GlSWEHvv7VW7eEnH_F78-20" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-18" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="分析新增耗时或者耗时明显的" vertex="1">
+          <mxGeometry height="40" width="120" x="250" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="GlSWEHvv7VW7eEnH_F78-20" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="结合AI和项目源码生成报告" vertex="1">
+          <mxGeometry height="60" width="120" x="250" y="670" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
