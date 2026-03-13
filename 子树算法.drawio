@@ -1,9 +1,122 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.6.1">
-  <diagram name="第 1 页" id="hE7HHla--BaojmlV6j0R">
-    <mxGraphModel>
+  <diagram name="主流程图" id="hE7HHla--BaojmlV6j0R">
+    <mxGraphModel dx="1678" dy="884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="HzHuLslDl8ymuOFIotVr-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;" value="开始&lt;br&gt;get_analyze_stack()" vertex="1">
+          <mxGeometry height="60" width="200" x="480" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" value="执行 SQL 查询&lt;br&gt;SELECT * FROM slice&lt;br&gt;WHERE dur &gt; threshold&lt;br&gt;ORDER BY dur DESC" vertex="1">
+          <mxGeometry height="80" width="240" x="460" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-4" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="HzHuLslDl8ymuOFIotVr-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="初始化&lt;br&gt;my_set = 空集合&lt;br&gt;data_list_filter = 空列表" vertex="1">
+          <mxGeometry height="60" width="240" x="460" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-6" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="HzHuLslDl8ymuOFIotVr-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-7" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" value="遍历 data_list&lt;br&gt;还有节点?" vertex="1">
+          <mxGeometry height="80" width="180" x="490" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-8" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="HzHuLslDl8ymuOFIotVr-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="获取当前节点&lt;br&gt;method_name, dur, depth, slice_id" vertex="1">
+          <mxGeometry height="60" width="200" x="760" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-10" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" target="HzHuLslDl8ymuOFIotVr-9" value="有节点">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-11" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff4e6;strokeColor=#ff9800;fontSize=12;fontStyle=1;" value="slice_id&lt;br&gt;in my_set?" vertex="1">
+          <mxGeometry height="80" width="140" x="790" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-12" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="HzHuLslDl8ymuOFIotVr-11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" value="跳过此节点&lt;br&gt;(continue)" vertex="1">
+          <mxGeometry height="50" width="140" x="1000" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-14" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" target="HzHuLslDl8ymuOFIotVr-13" value="是">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="fetch_slice_subtree1&lt;br&gt;获取完整子树&lt;br&gt;深度限制=10" vertex="1">
+          <mxGeometry height="60" width="200" x="760" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-16" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" target="HzHuLslDl8ymuOFIotVr-15" value="否">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="collect_matching_nodes&lt;br/&gt;筛选满足条件的子节点" vertex="1">
+          <mxGeometry height="50" width="200" x="760" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-18" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="HzHuLslDl8ymuOFIotVr-17" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#4caf50;fontSize=12;fontStyle=1;fontColor=#c62828;" value="将所有子节点的 ID 加入 my_set&lt;br&gt;标记为已占用&lt;br&gt;⭐ 关键步骤!" vertex="1">
+          <mxGeometry height="70" width="200" x="760" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-20" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="HzHuLslDl8ymuOFIotVr-19" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#2196f3;fontSize=12;" value="将根节点加入&lt;br&gt;data_list_filter" vertex="1">
+          <mxGeometry height="50" width="200" x="760" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-22" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="HzHuLslDl8ymuOFIotVr-21" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-23" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="HzHuLslDl8ymuOFIotVr-9" value="">
+          <mxGeometry relative="1" x="-0.3" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1100" y="925" />
+              <mxPoint x="1100" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-24" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="HzHuLslDl8ymuOFIotVr-9" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1140" y="525" />
+              <mxPoint x="1140" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;" value="返回&lt;br&gt;data_list_filter" vertex="1">
+          <mxGeometry height="60" width="200" x="480" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-26" edge="1" parent="1" source="HzHuLslDl8ymuOFIotVr-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" target="HzHuLslDl8ymuOFIotVr-25" value="无节点">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-27" parent="1" style="swimlane;fontSize=14;fontStyle=1;fillColor=#f5f5f5;strokeColor=#666666;" value="图例" vertex="1">
+          <mxGeometry height="280" width="260" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-28" parent="HzHuLslDl8ymuOFIotVr-27" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="开始/结束" vertex="1">
+          <mxGeometry height="40" width="100" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-29" parent="HzHuLslDl8ymuOFIotVr-27" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="处理步骤" vertex="1">
+          <mxGeometry height="40" width="100" x="140" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-30" parent="HzHuLslDl8ymuOFIotVr-27" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="判断节点" vertex="1">
+          <mxGeometry height="60" width="100" x="20" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-31" parent="HzHuLslDl8ymuOFIotVr-27" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff4e6;strokeColor=#ff9800;fontStyle=1;" value="关键决策&lt;br&gt;(去重检查)" vertex="1">
+          <mxGeometry height="60" width="100" x="140" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-32" parent="HzHuLslDl8ymuOFIotVr-27" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#4caf50;fontStyle=1;fontColor=#c62828;" value="关键操作&lt;br&gt;(标记占用)" vertex="1">
+          <mxGeometry height="50" width="100" x="20" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-33" parent="HzHuLslDl8ymuOFIotVr-27" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="跳过操作" vertex="1">
+          <mxGeometry height="50" width="100" x="140" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-34" parent="HzHuLslDl8ymuOFIotVr-27" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="SQL 查询" vertex="1">
+          <mxGeometry height="40" width="100" x="20" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="HzHuLslDl8ymuOFIotVr-35" parent="HzHuLslDl8ymuOFIotVr-27" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#2196f3;" value="输出结果" vertex="1">
+          <mxGeometry height="40" width="100" x="140" y="250" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
